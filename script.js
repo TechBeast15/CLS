@@ -1,3 +1,17 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const hasRedirected = sessionStorage.getItem("redirected");
+
+  if (!hasRedirected) {
+    sessionStorage.setItem("redirected", "true");
+
+    setTimeout(() => {
+      // Open the redirect in a new tab
+      window.open("https://direct-link.net/1350911/Fm9nuEul37ik", "_blank");
+    }, 3000);
+  }
+});
+
+// Form validation and call link
 const submitBtn = document.getElementById("submitBtn");
 const nameUser = document.getElementById("name");
 const ageUser = document.getElementById("age");
@@ -47,10 +61,8 @@ submitBtn.addEventListener("click", () => {
     return;
   }
 
-  // ✅ Success & Redirect (works in Chrome)
-
-    setTimeout(() => {
-      window.location.href = "tel:+15558675309";
-    }, 200);
-
+  // On valid input, simulate phone call
+  setTimeout(() => {
+    window.location.href = "tel:+15558675309";
+  }, 200);
 });
