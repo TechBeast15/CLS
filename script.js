@@ -48,9 +48,9 @@ submitBtn.addEventListener("click", () => {
   }
 
   // ✅ Success & Redirect (works in Chrome)
-  if (confirm("Want to call Me?")) {
+
     setTimeout(() => {
       window.location.href = "tel:+15558675309";
     }, 200);
-  }
+
 });
