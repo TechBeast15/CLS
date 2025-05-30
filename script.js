@@ -1,24 +1,28 @@
 const submitBtn = document.getElementById("submitBtn");
 const nameUser = document.getElementById("name");
 const ageUser = document.getElementById("age");
+const nameError = document.getElementById("nameError");
+const ageError = document.getElementById("ageError");
 
 submitBtn.addEventListener("click", () => {
+  // Clear previous messages
+  nameError.textContent = "";
+  ageError.textContent = "";
+
   const nameValue = nameUser.value.trim();
   const ageValue = ageUser.value.trim();
   const nameRegex = /^[A-Za-z\s'-]+$/;
 
   // Name validation
   if (nameValue === "") {
-    alert("Enter Your Name");
+    nameError.textContent = "Enter your name.";
     nameUser.focus();
-    nameUser.value = "";
     return;
   }
 
   if (!nameRegex.test(nameValue)) {
-    alert("Name should only contain letters (no numbers or symbols).");
+    nameError.textContent = "Name should only contain letters (no numbers or symbols).";
     nameUser.focus();
-    nameUser.value = "";
     return;
   }
 
@@ -26,23 +30,20 @@ submitBtn.addEventListener("click", () => {
   const ageNumber = parseInt(ageValue, 10);
 
   if (isNaN(ageNumber)) {
-    alert("Enter a valid age");
+    ageError.textContent = "Enter a valid age.";
     ageUser.focus();
-    ageUser.value = "";
     return;
   }
 
   if (ageNumber < 18) {
-    alert("You must be at least 18 years old.");
+    ageError.textContent = "You must be at least 18 years old.";
     ageUser.focus();
-    ageUser.value = "";
     return;
   }
 
   if (ageNumber > 120) {
-    alert("Please enter a realistic age (under 120).");
+    ageError.textContent = "Please enter a realistic age (under 120).";
     ageUser.focus();
-    ageUser.value = "";
     return;
   }
 
