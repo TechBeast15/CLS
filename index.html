@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 🛡️ Security Headers -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self';"
+    />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade" />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+
+    <!-- ✅ Page Info -->
+    <title>📲 Call Me!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section>
+      <div class="profile">
+        <div class="dp">
+          <img src="./img/DP.jpeg" alt="" />
+        </div>
+
+        <div class="">
+          <h1>Ayesha</h1>
+        </div>
+      </div>
+      <form action="#">
+        <label for="name">Enter your Name :</label>
+        <input type="text" id="name" placeholder="Enter Your Name" required />
+
+        <label for="name">Select Your Age :</label>
+        <input type="text" id="age" placeholder="Enter Your Age" required />
+
+        <button id="submitBtn">Call Me!</button>
+      </form>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
